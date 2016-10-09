@@ -20,9 +20,10 @@ describe( 'localize()', function() {
 			render: emptyRender
 		} );
 
+		var myComponentName = MyComponent.displayName || MyComponent.name || '';
 		var LocalizedComponent = localize( MyComponent );
 
-		expect( LocalizedComponent.displayName ).to.equal( 'Localized' );
+		expect( LocalizedComponent.displayName ).to.equal( 'Localized' + myComponentName );
 	} );
 
 	it( 'should be named using the displayName of the composed component', function() {
